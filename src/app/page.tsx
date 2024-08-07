@@ -7,13 +7,13 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-between p-24">
+    <main className="flex min-h-screen items-center justify-between">
       <nav className="absolute right-2 top-2">
         <ModeToggle />
       </nav>
 
       <aside className="hidden lg:block">
-        <Image src="/public/login.jpeg" alt="" width={554} height={832}/>
+        <Image src="/login.png" alt="" width={554} height={832}/>
       </aside>
 
       <section className="flex flex-col items-center w-full space-y-7">
@@ -39,14 +39,21 @@ export default function Home() {
         </TabsContent>
 
         <TabsContent value="registrar">
-          <p>criar conta</p>
+          <form action="" className="space-y-2">
+            <Label htmlFor="nome">nome</Label>
+            <Input id="nome"/>
+            <Label htmlFor="bio">bio</Label>
+            <Input id="bio"/>
+            <Label htmlFor="email">email</Label>
+            <Input id="email"/>
+            <Label htmlFor="senha">senha</Label>
+            <Input id="senha" type="password"/>
+            <Button type="submit">criar conta</Button>
+          </form>
         </TabsContent>
-
+        
       </Tabs>
-      
-      </section>
-      
-      
+      </section>     
     </main>
   );
 }
